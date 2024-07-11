@@ -7,13 +7,13 @@ public class BMICalculator {
 
     /**
      *
-     * @param height
-     * @param weight
-     * @return
+     * @param height: 키
+     * @param weight: 몸무게
+     * @return BMI: BMI
      */
     // calculateBMI 메서드
     public static double calculateBMI(double height, double weight) {
-        double BMI = 0.0;
+        double BMI;
         BMI = weight / (height * height);
         return BMI;
     }
