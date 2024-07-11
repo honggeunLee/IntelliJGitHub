@@ -1,19 +1,23 @@
 package lotto;
 
-import java.util.HashSet;
-import java.util.Random;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 public class LottoMachine {
+    private ArrayList<LottoBall> balls;
 
-    public Set<LottoBall> generateLottoBalls() {
-        Set<LottoBall> balls = new HashSet<>();
-        Random random = new Random();
-
-        while (balls.size() < 6) {
-            int number = random.nextInt(45) + 1;
-            balls.add(new LottoBall(number));
+    public LottoMachine() {
+        balls = new ArrayList<>();
+        for (int i = 1; i <= 45; i++) {
+            balls.add(new LottoBall(i));
         }
-        return balls;
+    }
+
+    public LottoBall[] selectBalls() {
+        Collections.shuffle(balls);
+        List<LottoBall> selected = balls.subList(0, 6);
+        Collections.sort(selected);
+        return selected.toArray(new LottoBall[selected.size()]);
     }
 }

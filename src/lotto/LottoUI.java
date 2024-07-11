@@ -1,7 +1,6 @@
 package lotto;
 
 import java.util.Scanner;
-import java.util.Set;
 
 public class LottoUI {
     private Scanner scanner;
@@ -25,13 +24,12 @@ public class LottoUI {
         return money - totalCost;
     }
 
-    public void outputLottoPaper(Set<LottoBall> balls) {
-        System.out.println("로또 번호: ");
+    public void lottoPaper(LottoBall[] balls) {
+        System.out.print("로또 번호: ");
         for (LottoBall ball : balls) {
-            System.out.print(ball.getNum() + " ");
+            System.out.print(ball.getNumber() + " ");
         }
-        System.out.println(" ");
-        System.out.println("--------------------------------");
+        System.out.println();
+        System.out.println("--------------------------");
     }
-
 }

@@ -1,21 +1,23 @@
 package lotto;
 
-public class LottoBall {
+public final class LottoBall implements Comparable<LottoBall> {
+    private final int number;
 
-    private int num;
+    public LottoBall(int number) {
+        this.number = number;
+    }
 
-    // Constructor
-    public LottoBall(int num) {
-        this.num = num;
+    public int getNumber() {
+        return number;
     }
 
     @Override
     public String toString() {
-        return String.valueOf(num);
+        return "number " + number;
     }
 
-    public int getNum() {
-        return num;
+    @Override
+    public int compareTo(LottoBall other) {
+        return Integer.compare(this.number, other.number);
     }
-
 }
